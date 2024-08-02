@@ -20,8 +20,10 @@ class PlantService implements PlantServiceInterface
         }
     }
 
-    private function fetchPlant($id){
-        $apiKey = env('API_PERENUAL_KEY');
+    private function fetchPlant($id)
+    {
+        $apiKey = env("API_PERENUAL_KEY");
+        
         $response = Http::get("{$this->apiUrl}/{$id}", [
             'key' => $apiKey
         ]);
@@ -32,7 +34,8 @@ class PlantService implements PlantServiceInterface
         }
     }
 
-    private function storePlants($data){
+    private function storePlants($data)
+    {
         $plantData = [
             'api_id' => $data['id'],
             'common_name' => $data['common_name'],
