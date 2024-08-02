@@ -26,8 +26,7 @@ class PlantService implements PlantServiceInterface
             'key' => $apiKey
         ]);
         if ($response->successful()) {
-            $data = $response->json();
-            return $data;
+            return $response->json();
         } else {
             Log::error("Failed to fetch plant with ID {$id}: " . $response->body());
         }
