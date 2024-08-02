@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Interfaces;
+
+use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Http\Request;
+
+interface UserRepositoryInterface
+{
+    public function find(string $field, string $operator, $value): User;
+    public function findAll(): Collection;
+    public function create(Request $request): User;
+    public function update(Request $request, string $common_name): User;
+    public function delete(int $îd);
+}
